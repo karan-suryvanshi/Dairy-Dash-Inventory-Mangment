@@ -1,0 +1,275 @@
+/* Main application layout */
+
+.dd-app {
+  min-height: 100vh;
+  display: flex;
+  background: var(--dd-background);
+}
+
+/* Sidebar */
+
+.dd-sidebar {
+  width: 260px;
+  min-width: 260px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+
+  display: flex;
+  flex-direction: column;
+
+  color: #ffffff;
+  background: var(--dd-navy);
+
+  transition: transform 0.25s ease;
+}
+
+.dd-sidebar-header {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  padding: 0 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.dd-sidebar .dd-brand-name {
+  color: #ffffff;
+}
+
+.dd-sidebar .dd-brand-name span {
+  color: #7bd6a1;
+}
+
+.dd-sidebar .dd-brand-icon {
+  background: var(--dd-primary);
+}
+
+.dd-sidebar-label {
+  padding: 24px 22px 10px;
+  color: #91a6b2;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.dd-sidebar-nav {
+  flex: 1;
+  padding: 0 12px;
+  overflow-y: auto;
+}
+
+.dd-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 12px 14px;
+  margin-bottom: 5px;
+
+  color: #c3d0d7;
+  border-radius: 9px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition: var(--dd-transition);
+}
+
+.dd-nav-link i {
+  width: 19px;
+  font-size: 17px;
+}
+
+.dd-nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dd-nav-link.active {
+  color: #ffffff;
+  background: var(--dd-primary);
+  font-weight: 650;
+}
+
+.dd-sidebar-footer {
+  padding: 17px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  color: #a9bac3;
+  font-size: 11px;
+}
+
+/* Main content */
+
+.dd-main {
+  min-width: 0;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+}
+
+.dd-header {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 0 30px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--dd-border);
+}
+
+.dd-header-left,
+.dd-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dd-header-search {
+  width: 300px;
+  position: relative;
+}
+
+.dd-header-search i {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--dd-text-muted);
+}
+
+.dd-header-search input {
+  padding-left: 38px;
+  background: var(--dd-surface-muted);
+  border-color: transparent;
+}
+
+.dd-icon-button {
+  width: 39px;
+  height: 39px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  color: var(--dd-text-secondary);
+  background: #ffffff;
+  border: 1px solid var(--dd-border);
+  border-radius: 10px;
+}
+
+.dd-icon-button:hover {
+  color: var(--dd-primary);
+  background: var(--dd-primary-light);
+}
+
+.dd-notification-dot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--dd-danger);
+  border: 1px solid #ffffff;
+}
+
+.dd-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dd-avatar {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: var(--dd-primary-light);
+  color: var(--dd-primary);
+  font-weight: 750;
+}
+
+.dd-profile-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dd-text-primary);
+}
+
+.dd-profile-role {
+  font-size: 10px;
+  color: var(--dd-text-muted);
+}
+
+.dd-page-content {
+  padding: 30px;
+}
+
+.dd-mobile-menu {
+  display: none;
+}
+
+.dd-sidebar-overlay {
+  display: none;
+}
+
+/* Responsive layout */
+
+@media (max-width: 991px) {
+  .dd-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .dd-sidebar.show {
+    transform: translateX(0);
+  }
+
+  .dd-main {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .dd-mobile-menu {
+    display: inline-flex;
+  }
+
+  .dd-sidebar-overlay.show {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1040;
+    background: rgba(10, 25, 35, 0.5);
+  }
+
+  .dd-header {
+    padding: 0 18px;
+  }
+
+  .dd-page-content {
+    padding: 22px 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dd-header-search {
+    display: none;
+  }
+
+  .dd-profile-details {
+    display: none;
+  }
+
+  .dd-header {
+    gap: 8px;
+  }
+
+  .dd-page-content {
+    padding: 18px 12px;
+  }
+}

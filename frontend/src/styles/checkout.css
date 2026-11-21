@@ -1,0 +1,156 @@
+
+.checkout-page {
+  min-height: 100vh;
+  background: #f8faf6;
+}
+
+.checkout-heading {
+  margin-bottom: 35px;
+}
+
+.checkout-heading h2 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #193b29;
+  margin-top: 8px;
+}
+
+.checkout-heading p {
+  color: #78857b;
+}
+
+.checkout-card,
+.checkout-summary {
+  background: white;
+  border: 1px solid #e7eee7;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 22px;
+}
+
+.checkout-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.checkout-step-number {
+  width: 38px;
+  height: 38px;
+  background: #e9f5e7;
+  color: #388244;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.checkout-card-heading h4 {
+  font-size: 19px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.checkout-card-heading p {
+  margin: 3px 0 0;
+  color: #879289;
+  font-size: 13px;
+}
+
+.checkout-card .form-control {
+  padding: 12px;
+  border-color: #e1e9e1;
+}
+
+.checkout-card .form-control:focus {
+  border-color: #68a968;
+  box-shadow: 0 0 0 3px #68a96820;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid #e5ece5;
+  padding: 17px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.payment-option label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.payment-option label i {
+  font-size: 27px;
+  color: #4d9352;
+}
+
+.payment-option label small {
+  display: block;
+  color: #879289;
+  margin-top: 4px;
+}
+
+.checkout-summary {
+  position: sticky;
+  top: 100px;
+}
+
+.checkout-summary h4 {
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+.checkout-product {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.checkout-product small {
+  display: block;
+  color: #89958c;
+  margin-top: 5px;
+}
+
+.checkout-total-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.checkout-grand-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 21px;
+  font-weight: 800;
+  color: #193b29;
+  margin-bottom: 20px;
+}
+
+.checkout-grand-total strong {
+  color: #39834a;
+}
+
+@media (max-width: 767px) {
+  .checkout-card,
+  .checkout-summary {
+    padding: 18px;
+  }
+
+  .checkout-summary {
+    position: static;
+  }
+
+  .checkout-heading h2 {
+    font-size: 27px;
+  }
+}

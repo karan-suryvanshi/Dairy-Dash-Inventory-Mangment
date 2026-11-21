@@ -1,0 +1,19 @@
+# Local environment configuration
+frontend/.env
+backend/src/main/resources/application-local.properties
+
+# Build output and dependencies
+frontend/node_modules/
+frontend/dist/
+backend/target/
+**/target/
+
+# IDE and operating system files
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs and crash reports
+*.log
+hs_err_pid*.log
+replay_pid*.log

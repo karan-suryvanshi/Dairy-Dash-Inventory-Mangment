@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Backend (Spring Boot)",
+      "type": "shell",
+      "command": "cmd /c \"cd /d ${workspaceFolder}\\backend && mvnw.cmd spring-boot:run\"",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "group": "dairydash"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Start Frontend (Vite)",
+      "type": "shell",
+      "command": "cmd /c \"cd /d ${workspaceFolder}\\frontend && npm run dev\"",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "group": "dairydash"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run DairyDash Full Stack (Combined)",
+      "dependsOn": [
+        "Start Backend (Spring Boot)",
+        "Start Frontend (Vite)"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
+
